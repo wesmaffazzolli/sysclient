@@ -4,9 +4,9 @@
  * and open the template in the editor.
  */
 
-import bd.ConnectionFactory;
-import beans.Empresa;
-import dao.EmpresaDao;
+import br.ufpr.tads.web.bd.ConnectionFactory;
+import br.ufpr.tads.web.model.Empresa;
+import br.ufpr.tads.web.dao.EmpresaDao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;

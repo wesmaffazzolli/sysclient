@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controller;
+package br.ufpr.tads.web.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -17,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Wesley
  */
-@WebServlet(name = "EmpresaController", urlPatterns = {"/EmpresaController"})
-public class EmpresaController extends HttpServlet {
+@WebServlet(name = "FuncionarioController", urlPatterns = {"/FuncionarioController"})
+public class FuncionarioController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,10 +37,10 @@ public class EmpresaController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet EmpresaController</title>");            
+            out.println("<title>Servlet FuncionarioController</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet EmpresaController at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet FuncionarioController at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }

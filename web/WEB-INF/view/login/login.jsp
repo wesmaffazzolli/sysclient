@@ -1,9 +1,11 @@
+<%-- 
+    Document   : login
+    Created on : 05/11/2017, 16:11:41
+    Author     : Wesley
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <title>Login</title>
@@ -12,7 +14,7 @@ and open the template in the editor.
     </head>
     <body>
         <h1>Login</h1>
-        <form action="login" method="POST">
+        <form action="ProcessaLoginServlet" method="POST">
             Login:<input type="text" name="login">
             <br>
             Senha:<input type="text" name="senha">

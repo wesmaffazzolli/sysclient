@@ -5,9 +5,9 @@
  */
 
 import java.sql.ResultSet;
-import bd.ConnectionFactory;
-import beans.Usuario;
-import dao.AcessoDao;
+import br.ufpr.tads.web.bd.ConnectionFactory;
+import br.ufpr.tads.web.model.Usuario;
+import br.ufpr.tads.web.dao.AcessoDao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;

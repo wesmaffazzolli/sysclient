@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package bd;
+package br.ufpr.tads.web.bd;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dao;
+package br.ufpr.tads.web.dao;
 
-import bd.ConnectionFactory;
-import beans.Empresa;
+import br.ufpr.tads.web.bd.ConnectionFactory;
+import br.ufpr.tads.web.model.Empresa;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -21,7 +21,7 @@ import java.util.logging.Logger;
  *
  * @author Wesley
  */
-public class EmpresaDao implements GenericDao {
+public class EmpresaDao extends GenericDao {
 
     @Override
     public List<Empresa> findAll() {

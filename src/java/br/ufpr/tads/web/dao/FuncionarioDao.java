@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dao;
+package br.ufpr.tads.web.dao;
 
-import bd.ConnectionFactory;
+import br.ufpr.tads.web.bd.ConnectionFactory;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
@@ -14,7 +14,7 @@ import java.util.List;
  *
  * @author Wesley
  */
-public class FuncionarioDao implements GenericDao {
+public class FuncionarioDao extends GenericDao {
 
     @Override
     public List findAll() {
