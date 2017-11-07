@@ -32,7 +32,7 @@ public class EmpresaDao extends GenericDao {
             List<Empresa> list = new ArrayList<Empresa>();
             while (rs.next()) {
                 Empresa empresa = new Empresa();
-                empresa.setId(rs.getString("id"));
+                empresa.setId(rs.getString("codigo"));
                 empresa.setCnpj(rs.getString("cnpj"));
                 empresa.setEmail(rs.getString("email"));
                 empresa.setEndereco(rs.getString("endereco"));
@@ -59,7 +59,7 @@ public class EmpresaDao extends GenericDao {
             List<Empresa> list = new ArrayList<Empresa>();
             while (rs.next()) {
                 Empresa empresa = new Empresa();
-                empresa.setId(rs.getString("id"));
+                empresa.setId(rs.getString("codigo"));
                 empresa.setCnpj(rs.getString("cnpj"));
                 empresa.setEmail(rs.getString("email"));
                 empresa.setEndereco(rs.getString("endereco"));
@@ -80,17 +80,19 @@ public class EmpresaDao extends GenericDao {
     @Override
     public Empresa findById(String id) {
         try {
+            Empresa empresa = null;
             Connection connection = this.callConnection();
             Statement stmt = connection.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM EMPRESA WHERE CODIGO = " + id);
-
-            Empresa empresa = new Empresa();
-            empresa.setId(rs.getString("id"));
-            empresa.setCnpj(rs.getString("cnpj"));
-            empresa.setEmail(rs.getString("email"));
-            empresa.setEndereco(rs.getString("endereco"));
-            empresa.setRazaoSocial(rs.getString("razao_social"));
-
+            String query = "SELECT * FROM EMPRESA WHERE CODIGO='" + id + "';";
+            ResultSet rs = stmt.executeQuery(query);
+            while (rs.next()) {
+                empresa = new Empresa();
+                empresa.setId(rs.getString("codigo"));
+                empresa.setCnpj(rs.getString("cnpj"));
+                empresa.setEmail(rs.getString("email"));
+                empresa.setEndereco(rs.getString("endereco"));
+                empresa.setRazaoSocial(rs.getString("razao_social"));
+            }
             connection.close();
             return empresa;
         } catch (SQLException ex) {
@@ -136,7 +138,7 @@ public class EmpresaDao extends GenericDao {
                     + "' WHERE CODIGO='" + empresa.getId()
                     + "';";
             stmt.executeUpdate(query);
-            
+
             connection.close();
             return true;
         } catch (SQLException ex) {
@@ -154,7 +156,7 @@ public class EmpresaDao extends GenericDao {
             Statement stmt = connection.createStatement();
             String query = "DELETE FROM EMPRESA WHERE CODIGO='" + id + "';";
             stmt.executeUpdate(query);
-            
+
             connection.close();
             return true;
         } catch (SQLException ex) {

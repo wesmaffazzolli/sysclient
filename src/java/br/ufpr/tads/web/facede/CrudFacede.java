@@ -19,4 +19,5 @@ public abstract class CrudFacede {
     protected abstract void beforeSave(GenericDao dao) throws ValidationException;
     
     protected abstract void beforeDelete(GenericDao dao);
+    
 }

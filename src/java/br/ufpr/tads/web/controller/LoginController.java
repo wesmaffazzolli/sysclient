@@ -94,8 +94,10 @@ public class LoginController extends Controller {
             if (chave.isUser(chave.login(conexao))) { //Valida o processo de login do usuário
                 chave.setSession(request.getSession());
                 if (chave.isConnected()) { //Valida se a sessão foi aberta e está com os dados do usuário
+                    //request.setAttribute("action", "findAll");
+                    String action = "findAll";
                     RequestDispatcher rd = getServletContext().
-                            getRequestDispatcher("/portal");
+                            getRequestDispatcher("/portal?action="+action);
                     rd.forward(request, response);
                 }
             } else {

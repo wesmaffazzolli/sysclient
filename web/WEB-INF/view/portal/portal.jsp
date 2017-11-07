@@ -18,14 +18,36 @@
         <br>
         <h2>Buscar</h2>
         <div>
-            <form action="/portal/action=find" method="POST">
-                <input type="text" name="find">
+            <form action="${contextPath}/${basePath}?action=find" method="POST">
+                <input type="text" name="search">
                 <input type="submit" value="Buscar">
             </form>
             <br>
-            <a href="${contextPath}/${baseDir}/portal/insert.jsp"><input type="submit" value="Adicionar Empresa"></a>
+            <a href="http://localhost:8081/sysclient/portal?action=add">Adicionar Empresa</a>
             <br>
-            <h4>Mostrar tabela com todas as empresas aqui.</h4>
+            <h2>Empresas</h2>
+            <table style="width:100%; text-align:left;" border="1">
+                <tr>
+                    <th>CNPJ</th>
+                    <th>Razão Social</th>
+                    <th>Endereço</th>
+                    <th>Email</th>
+                    <th>Ação</th>
+                </tr>
+                <c:forEach var="empresa" items="${lista}">
+                    <tr bgcolor="#${empresa.id%2==0 ? 'C0C0C0' : 'ffffff'}">
+                        <td>${empresa.cnpj}</td>
+                        <td>${empresa.razaoSocial}</td>
+                        <td>${empresa.endereco}</td>
+                        <td>${empresa.email}</td>
+                        <td> 
+                            <a href="${contextPath}/${basePath}?action=delete&id=${empresa.id}">Remover</a>
+                            &nbsp&nbsp
+                            <a href="${contextPath}/${basePath}?action=update&id=${empresa.id}">Alterar</a>
+                        </td>
+                    </tr>
+                </c:forEach>
+            </table>
         </div>
     </body>
 </html>

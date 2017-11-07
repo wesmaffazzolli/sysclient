@@ -5,6 +5,7 @@
 --%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
  <head>
@@ -14,7 +15,7 @@
     </head>
     <body>
         <h1>Adicionar Empresa</h1>
-        <form action="AdicionarEmpresaServlet" method="POST">
+        <form action="${contextPath}/${basePath}?action=add" method="POST">
             CNPJ:<input type="text" name="cnpj">
             <br>
             Razão Social:<input type="text" name="razao_social">
