@@ -10,8 +10,12 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <c:if test="${sessionScope.usuario == null}">
+            <c:set var="mensagem" value="O usuário não está logado. Faça o login para prosseguir." />
+            <jsp:forward page="/erro.jsp" />
+        </c:if>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Buscar</title>
+        <title>Buscar Empresa</title>
     </head>
     <body>
         <table style="width:100%; text-align:left;" border="1">
@@ -36,6 +40,6 @@
                 </tr>
             </c:forEach>
         </table>
-        <a href="http://localhost:8081/sysclient/portal?action=findAll">Mostrar Todos</a>
+        <a href="http://localhost:8081/sysclient/empresa">Mostrar Todos</a>
     </body>
 </html>

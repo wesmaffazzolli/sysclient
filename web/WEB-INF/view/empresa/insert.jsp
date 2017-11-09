@@ -8,7 +8,11 @@
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
- <head>
+    <head>
+        <c:if test="${sessionScope.usuario == null}">
+            <c:set var="mensagem" value="O usuário não está logado. Faça o login para prosseguir." />
+            <jsp:forward page="/erro.jsp" />
+        </c:if>
         <title>Adicionar Empresa</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">

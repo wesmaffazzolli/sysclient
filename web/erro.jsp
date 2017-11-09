@@ -1,6 +1,6 @@
 <%-- 
-    Document   : login
-    Created on : 05/11/2017, 16:11:41
+    Document   : erro
+    Created on : 08/11/2017, 00:29:01
     Author     : Wesley
 --%>
 
@@ -14,7 +14,7 @@
     </head>
     <body>
         <h1>Login</h1>
-        <form action="ProcessaLoginServlet" method="POST">
+        <form action="login" method="POST">
             Login:<input type="text" name="login">
             <br>
             Senha:<input type="text" name="senha">
@@ -22,5 +22,6 @@
             <br>
             <input type="submit" value="Entrar">
         </form>
+        <h3>Erro: ${mensagem}</h3>
     </body>
 </html>

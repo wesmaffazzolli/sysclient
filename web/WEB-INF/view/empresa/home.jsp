@@ -1,5 +1,5 @@
 <%-- 
-    Document   : portal
+    Document   : empresa
     Created on : 05/11/2017, 16:57:38
     Author     : Wesley
 --%>
@@ -10,11 +10,17 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <c:if test="${sessionScope.usuario == null}">
+            <c:set var="mensagem" value="O usuário não está logado. Faça o login para prosseguir." />
+            <jsp:forward page="/erro.jsp" />
+        </c:if>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Portal</title>
+        <title>Portal CRUD Empresa</title>
     </head>
     <body>
-        <h1>Seja bem-vindo ao Portal, ${sessionScope.nome}</h1>
+        <h1>Seja bem-vindo ao CRUD Empresa, ${sessionScope.nome}</h1>
+        <a href="http://localhost:8081/sysclient/portal">Voltar para o Portal</a>
+        <a href="http://localhost:8081/sysclient/logout">Logout</a>
         <br>
         <h2>Buscar</h2>
         <div>
@@ -23,7 +29,7 @@
                 <input type="submit" value="Buscar">
             </form>
             <br>
-            <a href="http://localhost:8081/sysclient/portal?action=add">Adicionar Empresa</a>
+            <a href="http://localhost:8081/sysclient/empresa?action=add">Adicionar Empresa</a>
             <br>
             <h2>Empresas</h2>
             <table style="width:100%; text-align:left;" border="1">

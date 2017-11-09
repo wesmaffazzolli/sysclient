@@ -116,6 +116,8 @@ public class EmpresaDao extends GenericDao {
                     + empresa.getEndereco() + "','"
                     + empresa.getEmail() + "');";
             stmt.executeUpdate(query);
+            
+            connection.close();
             return true;
         } catch (SQLException ex) {
             Logger.getLogger(EmpresaDao.class.getName()).log(Level.SEVERE, null, ex);
